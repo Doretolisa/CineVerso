@@ -13,6 +13,9 @@ align-items: center;
 background-color: black;
 padding: 0 20px;
 }
+.bg-dark{
+  background-color: #000 !important; 
+}
 i{
   cursor: pointer;
 
