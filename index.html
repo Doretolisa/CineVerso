@@ -60,9 +60,49 @@
   <section id="codigo" class="mt-5">
     <h2>Código-fonte</h2>
     <pre><code>// Exemplo de uso do Intent
-Intent i = new Intent(MainActivity.this, SegundaTela.class);
-i.putExtra("nome", nomeDigitado);
-startActivity(i);</code></pre>
+@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.home);
+
+        //2) Iniciando os elementos
+        btn_filmes = (Button) findViewById(R.id.Home);
+        btn_generos = (Button) findViewById(R.id.btn_generos);
+        btn_devs = (Button) findViewById(R.id.Devs);
+
+        //3) Criando o ArrayList
+        ArrayList<String> listinha = new ArrayList<String>();
+
+        // 4) Evento do btn_filmes
+        btn_filmes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it1 = new Intent(MainActivity.this,FilmesTeste.class );
+                startActivity(it1);
+            }
+        });
+
+        // 5) Evento do btn_generos
+        btn_generos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it2 = new Intent(MainActivity.this,GenerosTeste.class);
+                startActivity(it2);
+            }
+        });
+
+        // 6) Evento do btn_devs
+        btn_devs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it3 = new Intent(MainActivity.this,devs.class);
+                startActivity(it3);
+            }
+        });
+
+
+    }
+}</code></pre>
   </section>
 
   <section id="curiosidades" class="mt-5">
